@@ -1,0 +1,26 @@
+{
+  "name": "core-keeper-fishbot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "bin": "./bin.js",
+  "scripts": {
+    "start": "electron .",
+    "tsc-w": "tsc -w",
+    "tsc": "tsc"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@lunarade/xtools": "^1.0.15",
+    "chroma-js": "^3.0.0",
+    "electron": "^31.5.0",
+    "robotjs": "^0.6.0"
+  },
+  "devDependencies": {
+    "@types/chroma-js": "^2.4.4",
+    "@types/node": "^22.5.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4"
+  }
+}
