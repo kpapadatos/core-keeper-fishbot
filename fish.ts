@@ -37,7 +37,8 @@ import { getScreenSize, keyTap, mouseClick, mouseToggle, screen } from 'robotjs'
         const interval = setInterval(() => {
             const capturePoints = [
                 { x: width / 2 - 20, y: height / 2 - 216 },
-                { x: width / 2 + 5, y: height / 2 - 195 }
+                { x: width / 2 + 5, y: height / 2 - 195 },
+                { x: width / 2 - 10, y: height / 2 - 195 },
             ];
 
             for (const { x, y } of capturePoints) {
@@ -45,7 +46,7 @@ import { getScreenSize, keyTap, mouseClick, mouseToggle, screen } from 'robotjs'
 
                 const distance = deltaE(hex(color), caughtColor);
 
-                log('Color: ' + color + ' Distance: ' + distance); 4
+                log('Color: ' + color + ' Distance: ' + distance);
 
                 if (distance < 5) {
                     clearInterval(interval);
@@ -54,7 +55,7 @@ import { getScreenSize, keyTap, mouseClick, mouseToggle, screen } from 'robotjs'
                     break;
                 }
             }
-        }, 300);
+        }, 200);
 
         return deferred.promise;
     }

@@ -37,65 +37,20 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var xtools_1 = require("@lunarade/xtools");
-var chroma_js_1 = require("chroma-js");
 var console_1 = require("console");
 var robotjs_1 = require("robotjs");
 (function () { return __awaiter(void 0, void 0, void 0, function () {
-    function waitForFish() {
-        var deferred = (0, xtools_1.defer)();
-        var interval = setInterval(function () {
-            var capturePoints = [
-                { x: width / 2 - 20, y: height / 2 - 216 },
-                { x: width / 2 + 5, y: height / 2 - 195 },
-                { x: width / 2 - 10, y: height / 2 - 195 },
-            ];
-            for (var _i = 0, capturePoints_1 = capturePoints; _i < capturePoints_1.length; _i++) {
-                var _a = capturePoints_1[_i], x = _a.x, y = _a.y;
-                var color = robotjs_1.screen.capture(x, y, 1, 1).colorAt(0, 0);
-                var distance = (0, chroma_js_1.deltaE)((0, chroma_js_1.hex)(color), caughtColor);
-                (0, console_1.log)('Color: ' + color + ' Distance: ' + distance);
-                if (distance < 5) {
-                    clearInterval(interval);
-                    deferred.resolve();
-                    break;
-                }
-            }
-        }, 200);
-        return deferred.promise;
-    }
-    var caughtColor, _a, width, height;
-    return __generator(this, function (_b) {
-        switch (_b.label) {
+    return __generator(this, function (_a) {
+        switch (_a.label) {
             case 0:
-                caughtColor = (0, chroma_js_1.hex)('e0e1e9');
-                _a = (0, robotjs_1.getScreenSize)(), width = _a.width, height = _a.height;
-                (0, console_1.log)('Started');
-                (0, console_1.log)('Selecting fishing rod');
-                (0, robotjs_1.keyTap)('4');
-                _b.label = 1;
+                if (!true) return [3 /*break*/, 2];
+                (0, console_1.log)('Attacking');
+                (0, robotjs_1.keyTap)('8');
+                return [4 /*yield*/, (0, xtools_1.sleep)(1800)];
             case 1:
-                if (!true) return [3 /*break*/, 6];
-                (0, console_1.log)('Throwing hook');
-                (0, robotjs_1.mouseToggle)('down', 'right');
-                return [4 /*yield*/, (0, xtools_1.sleep)(100)];
-            case 2:
-                _b.sent();
-                (0, robotjs_1.mouseToggle)('up', 'right');
-                (0, console_1.log)('Waiting for previous bubble to disappear');
-                return [4 /*yield*/, (0, xtools_1.sleep)(1500)];
-            case 3:
-                _b.sent();
-                (0, console_1.log)('Waiting');
-                return [4 /*yield*/, waitForFish()];
-            case 4:
-                _b.sent();
-                (0, console_1.log)('Reeling');
-                (0, robotjs_1.mouseClick)('right');
-                return [4 /*yield*/, (0, xtools_1.sleep)(200)];
-            case 5:
-                _b.sent();
-                return [3 /*break*/, 1];
-            case 6: return [2 /*return*/];
+                _a.sent();
+                return [3 /*break*/, 0];
+            case 2: return [2 /*return*/];
         }
     });
 }); })();
